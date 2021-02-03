@@ -1,0 +1,83 @@
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.fc {
+    display: flex;
+    justify-content: center;
+    align-content: center
+}
+
+.fs {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center
+}
+
+.fb {
+    display: flex;
+    justify-content: space-between;
+    align-content: center
+}
+
+.f1 {
+    flex: 1;
+}
+
+.title-item {
+    width: 100%;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+/* 表格样式 */
+/* 表头 */
+#myTableStyle /deep/ .el-table__header th {
+    background: #144499 ;
+    color: #ffffff;
+    text-align: center;
+    font-weight: normal;
+}
+/* 内容居中
+#myTableStyle /deep/ .el-table__row td {
+    text-align: center;
+} */
+/* 斑马纹颜色 */
+#myTableStyle /deep/ tr.el-table__row--striped td {
+    background-color:#f4f7ff !important;
+}
+/* 鼠标悬停效果 */
+/* 有固定列 */
+#myTableStyle /deep/ tr.el-table__row--striped.hover-row td  {
+    background-color:#e6ecfd !important;
+}
+#myTableStyle /deep/ .el-table__body .el-table__row.hover-row td {
+    background-color: #e6ecfd
+}
+/* 无固定列 */
+#myTableStyle /deep/ tr.el-table__row--striped:hover>td  {
+    background-color:#e6ecfd !important;
+}
+#myTableStyle /deep/ .el-table__body .el-table__row:hover td {
+    background-color: #e6ecfd
+}
+#myTableStyle /deep/ tr{
+    cursor: pointer;
+}
+/* 固定列边框 */
+#myTableStyle /deep/ .el-table__body-wrapper.is-scrolling-right~.el-table__fixed-right {
+    box-shadow: -0.8px 0 #f0f0f0;
+} 
+#myTableStyle /deep/ .el-table__body-wrapper.is-scrolling-none~.el-table__fixed {
+    box-shadow: 0.8px 0 #f0f0f0;
+} 
+
+#myNumberInput /deep/  input::-webkit-outer-spin-button,
+#myNumberInput /deep/  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#myNumberInput /deep/  input[type="number"]{
+    -moz-appearance: textfield;
+}

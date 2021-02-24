@@ -45,5 +45,54 @@ export default {
             method: 'GET',
             url: `${api_name}/articles/${id}`,
         })
+    },
+    // 新建文章
+    getcreated (data,draft = false){
+        const user = JSON.parse(window.localStorage.getItem('user'))       
+        data.cover.type = parseInt(data.cover.type);
+        return request({
+            // 凡是看见文档接口中参数需要在 :xxx 格式的就需要传递id
+            method: 'POST',
+            url: `${api_name}/articles`,
+            headers: {
+                Authorization: `Bearer ${user.token}`,  
+            },
+            params: {
+                draft//是否为草稿
+            },
+            data,
+            
+        })
+    },
+    // 获取指定文章
+    getarticleIdList (articleId){
+        const user = JSON.parse(window.localStorage.getItem('user'))       
+        return request({
+            // 凡是看见文档接口中参数需要在 :xxx 格式的就需要传递id
+            method: 'GET',
+            url: `${api_name}/articles/${articleId}`,
+            headers: {
+                Authorization: `Bearer ${user.token}`,  
+            }
+            
+        })
+    },
+     // 编辑文章
+     getupCreated (articleId,data,draft = false){
+         console.log(draft);
+        const user = JSON.parse(window.localStorage.getItem('user'))       
+        return request({
+            // 凡是看见文档接口中参数需要在 :xxx 格式的就需要传递id
+            method: 'PUT',
+            url: `${api_name}/articles/${articleId}`,
+            headers: {
+                Authorization: `Bearer ${user.token}`,  
+            },
+            params: {
+                draft//是否为草稿
+            },
+            data,
+            
+        })
     }
 }

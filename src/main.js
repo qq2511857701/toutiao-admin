@@ -5,8 +5,11 @@ import store from './store'
 
 // 引入ElementUI
 import ElementUI from 'element-ui'
+import { ElementTiptapPlugin } from 'element-tiptap';
 import 'element-ui/lib/theme-chalk/index.css'
 // 加载全局样式文件
+// import element-tiptap 样式
+import 'element-tiptap/lib/index.css';
 
 import styles from './styles/index.less'
 
@@ -22,6 +25,8 @@ import styles from './styles/index.less'
 
 // 全局注册element组件库
 Vue.use(ElementUI);
+Vue.use(ElementTiptapPlugin, { lang: 'zh',/* 插件配置项 */ });
+// 现在你已经在全局注册了 `el-tiptap` 组件。
 
 Vue.config.productionTip = false
 // 创建vue根实例

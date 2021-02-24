@@ -30,6 +30,16 @@ const routes = [
       name: 'article',
       component: () => import('@/views/article/article.vue')
     },
+    {
+      path: '/publish',
+      name: 'publish',
+      component: () => import('@/views/publish/publish.vue')
+    },
+    {
+      path: '/image',
+      name: 'image',
+      component: () => import('@/views/image/image.vue')
+    }
 
   ]
   },

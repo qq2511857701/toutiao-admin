@@ -5,11 +5,8 @@
         <!-- 面包屑导航 -->
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+          <el-breadcrumb-item>内容管理</el-breadcrumb-item>
         </el-breadcrumb>
-        <el-button style="float: right; padding: 3px 0" type="text"
-          >操作按钮</el-button
-        >
       </div>
       <!-- from表单 -->
       <el-form size="small" ref="form" :model="form" label-width="80px">
@@ -172,7 +169,7 @@ export default {
       // 加载处理
       loading:true,
       // 加载过程 下面分页按钮禁止选中
-
+      id:null
 
     };
   },
@@ -226,6 +223,7 @@ export default {
           type: 'warning'
         }).then((res) =>{
           this.getdelete(scopeId)
+          this.articleList.splice(scope.$index,1)
         }).catch(() => {
           this.$message({
             type:'info',
@@ -247,7 +245,16 @@ export default {
          }
           
       })
-    }
+    },
+    // 编辑按钮
+    handleEdit(index,row) {
+      console.log(index,row);
+      this.id = row.id
+      // let id = row.id
+      // this.$router.push({path:'/publish',query:{id:this.id}})
+      this.$router.push(`/publish?id=${this.id}`)
+      
+    },
   },
 };
 </script>
